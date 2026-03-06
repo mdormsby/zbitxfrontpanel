@@ -36,4 +36,12 @@ jobs:
           arduino-cli compile \
             --fqbn rp2040:rp2040:rpipico \
             --build-property "build.extra_flags=-DUSE_DMA" \
+            --output-dir Release \
             .
+
+      - name: Upload release image
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-image
+          path: Release/*.uf2
+          if-no-files-found: error
