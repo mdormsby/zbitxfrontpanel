@@ -353,7 +353,6 @@ void setup() {
   command_init();
   field_set("MODE","CW", false);
 
-  q_init(&q_incoming);
   Wire1.setSDA(6);
   Wire1.setSCL(7);
   Wire1.begin(0x0a);
